@@ -15,14 +15,14 @@
         temper: 'not so good'
       };
       
-      this.$element().append("<h1>" + user.name + "</h1>");
+      //this.$element().append("<h1>" + user.name + "</h1>");
       //$("body").data('user', user);
       //$("body").html("");
       //$("body").append("<h1>" + user.name + "</h1>");
      
-      //return this.partial("user.tpl", {
-      //  user: user
-      //});
+      return this.partial("user.tpl", {
+        user: user
+      });
     });
     
     this.get('#/london/', function() {
