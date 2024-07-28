@@ -16,6 +16,7 @@
       };
 
       $.getJSON("myjson.json", function(data) {
+        var data = JSON.stringify(data); 
         alert(data);
       });
 
