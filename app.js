@@ -14,6 +14,11 @@
         ego: 'huge',
         temper: 'not so good'
       };
+
+      $.getJSON("https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json", function(data) {
+        alert(data);
+      });
+
       
       //this.$element().append("<h1>" + user.name + "</h1>");
       //$("body").data('user', user);
