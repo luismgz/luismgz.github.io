@@ -17,7 +17,7 @@
 
       $.getJSON("myjson.json", function(data) {
         //var data = JSON.stringify(data); 
-        $("#main".append(data.responseJSON[0].name);
+        $("#main").append(data.responseJSON[0].name);
       });
 
       
