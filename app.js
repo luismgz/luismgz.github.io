@@ -14,12 +14,6 @@
         ego: 'huge',
         temper: 'not so good'
       };
-
-      $.getJSON("myjson.json", function(data) {
-        //var data = JSON.stringify(data); 
-        $("#main").append(data.responseJSON[0].name);
-      });
-
       
       //this.$element().append("<h1>" + user.name + "</h1>");
       //$("body").data('user', user);
@@ -29,6 +23,12 @@
       return this.partial("user.tpl", {
         user: user
       });
+
+      $.getJSON("myjson.json", function(data) {
+        //var data = JSON.stringify(data); 
+        $("#main").append(data.responseJSON[0].name);
+      });
+      
     });
     
     this.get('#/london/', function() {
