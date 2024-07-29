@@ -8,11 +8,11 @@
       var user;
       this.swap('');
       user = {
-        name: json[0].name,
-        email: json[0].language,
-        age: json[0].bio,
-        ego: 'huge',
-        temper: 'not so good'
+        name: json[20].name,
+        email: json[20].language,
+        age: json[20].bio,
+        ego: json[20].id,
+        temper: json[20].version
       };
       
       //this.$element().append("<h1>" + user.name + "</h1>");
