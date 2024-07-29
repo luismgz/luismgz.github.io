@@ -24,10 +24,14 @@
         user: user
       });
 
-      $.getJSON("myjson.json", function(data) {
-        //var data = JSON.stringify(data); 
-        $("#main").append(data.responseJSON[0].name);
-      });
+      fetch("myjson.json")
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
       
     });
     
