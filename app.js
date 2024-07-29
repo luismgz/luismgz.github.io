@@ -24,14 +24,13 @@
         user: user
       });
 
-      fetch("myjson.json")
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+      fetch("myjson.json", {
+        mode: 'no-cors'
+      })
+        .then(response => 
+          console.log('Response received but cannoot read body:', response))
+        .catch(error => console.error('Error:', error));
+        
       
     });
     
