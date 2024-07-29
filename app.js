@@ -24,13 +24,9 @@
         user: user
       });
 
-      fetch("myjson.json", {
-        mode: 'no-cors'
-      })
-        .then(response => 
-          console.log('Response received but cannoot read body:', response))
-        .catch(error => console.error('Error:', error));
-        
+      $.getJSON("myjson.json", function(data){
+        $("#main").append(JSON.stringify(data));
+      });
       
     });
     
