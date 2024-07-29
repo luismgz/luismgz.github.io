@@ -9,7 +9,7 @@
       this.swap('');
       user = {
         name: json[0].name,
-        email: json[0]-language,
+        email: json[0].language,
         age: json[0].bio,
         ego: 'huge',
         temper: 'not so good'
