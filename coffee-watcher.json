@@ -1,0 +1,7 @@
+{
+  "sources": ["src/*.coffee"],
+  "output": "{dirname}/{basename}.js",
+  "options": {
+    "bare": true
+  }
+}
