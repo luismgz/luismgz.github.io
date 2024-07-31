@@ -11,7 +11,7 @@ app = $.sammy '#main', ->
     $.getJSON "https://luismgz.github.io/luismgz/myjson.json", (data)->
         for i in data
             if i.name[0] is "S"
-                $("#main).append "#{i.name}<br>"
+                $("#main").append "#{i.name}<br>"
 
   @get '#/london/', ->
     @swap ''
