@@ -17,7 +17,7 @@ $ ->
     $.getJSON "https://luismgz.github.io/luismgz/myjson.json", (data)->
         for i in data
             if i.name[0] is "A"
-                $("#app").append "<li><b>***#{i.name.toUpperCase()}***</b>"
+                $("#app").append "<li><b>#{i.name.toUpperCase()}</b>"
             else
                 $("#app").append "<li>#{i.name.toLowercase()}"
                 
