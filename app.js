@@ -7,7 +7,7 @@
     this.get('#/', function() {
       var user;
       this.swap('');
-      user = {
+      /*user = {
         name: json[20].name,
         email: json[20].language,
         age: json[20].bio,
@@ -22,11 +22,11 @@
      
       return this.partial("user.tpl", {
         user: user
-      });
+      });*/
 
-      //$.getJSON("myjson.json", function(data){
-      //  $("#main").append(JSON.stringify(data));
-      //});
+      $.getJSON("https://luismgz.github.io/myjson.json", function(data){
+        $("#main").append(JSON.stringify(data));
+      });
       
     });
     
