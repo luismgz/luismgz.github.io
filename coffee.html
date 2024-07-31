@@ -14,7 +14,7 @@
   <script type="text/coffeescript">
       
 $ -> 
-    $.getJSON "https://luismgz.github.io/luismgz/myjson.json", (data)->
+    $.getJSON "https://luismgz.github.io/myjson.json", (data)->
         for i in data
             if i.name[0] is "A"
                 $("#app").append "<li><b>#{i.name.toUpperCase()}</b>"
