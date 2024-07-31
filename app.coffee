@@ -4,9 +4,14 @@ app = $.sammy '#main', ->
 
   @get '#/', ->
     @swap ''
-    user = {name:'Luis Gonzalez', email:'luismgz@gmail.com', age:53, ego:'huge', temper:'not so good'}
+    #user = {name:'Luis Gonzalez', email:'luismgz@gmail.com', age:53, ego:'huge', temper:'not so good'}
     #$("body").data('user', user)
-    @partial('user.tpl', {user: user})
+    #@partial('user.tpl', {user: user})
+
+    $.getJSON "https://luismgz.github.io/luismgz/myjson.json", (data)->
+        for i in data
+            if i.name[0] is "S"
+                $("#main).append "#{i.name}<br>"
 
   @get '#/london/', ->
     @swap ''
