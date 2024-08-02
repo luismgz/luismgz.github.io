@@ -7,6 +7,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"></script>
   <script src="sammy.template.js"></script>
   <script src="app.js"></script>
+  <style>
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
 </head>
 
   <body>
@@ -16,7 +40,7 @@
         <li><a href="#/london/">London</a></li>
         <li><a href="#/about/">About</a></li>
         <li><a href="#/contact/">Contact</a></li>
-	    <li><a href="#/label/drafts">drafts</a></li>
+	      <li><a href="#/label/drafts">drafts</a></li>
         <li><a href="#/compose">compose</a></li>
       </ul>
     </nav>
