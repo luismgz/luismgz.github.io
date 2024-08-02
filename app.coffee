@@ -8,9 +8,9 @@ app = $.sammy '#main', ->
     #$("body").data('user', user)
     #@partial('user.tpl', {user: user})
 
-    $.getJSON "https://luismgz.github.io/luismgz/myjson.json", (data)->
+    $.getJSON "https://luismgz.github.io/myjson.json", (data)->
         for i in data
-            if i.name[0] is "S"
+            if i.name[0] is "K"
                 $("#main").append "#{i.name}<br>"
 
   @get '#/london/', ->
@@ -30,21 +30,15 @@ app = $.sammy '#main', ->
 
   @get '#/label/:name', ->
     @swap ''
-    #@$element().append "<h1>#{@params['name']}</h1>"
-    letter = @params['name'][0]
+    letter = @params['name'][0].toUpperCase()
+
     $.getJSON "https://luismgz.github.io/myjson.json", (data)->
-      $("#main").append "<table border=1><thead><tr>"
-      for k,v of data[0]
-        $("#main").append "<th>#{k}</th>"
-      $("#main").append "</tr></thead>"
-      $("#main").append "<tbody>"
+      header = "<thead><tr>" + ("<th>#{k.toUpperCase()}</th>" for k,v of data[0]).join("") + "</tr></thead>"      
+      rows = []      
       for record in data
-        $("#main").append "<tr>"
-        for k,v of record
-          if k[0] is letter
-            $("#main").append "<td>#{v}</td>"
-        $("#main").append "</tr>"
-      $("#main").append "</tbody></table>"
+        rows.push "<tr>" + ("<td>#{v}</td>" for k,v of record when record.name[0] is letter).join("") + "</tr>"
+      $("#main").append "<table border=1>#{header}<tbody>#{rows.join("")}</tbody></table>"
+
 
   @get '#/compose', ->
     @app.swap ''
