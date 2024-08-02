@@ -48,9 +48,34 @@
       return this.load('contact.html').swap();
     });
     this.get('#/label/:name', function() {
-      this.swap('');
-      return this.$element().append(`<h1>${this.params['name']}</h1>`);
+    var letter;
+    this.swap('');
+    //@$element().append "<h1>#{@params['name']}</h1>"
+    letter = this.params['name'][0];
+    return $.getJSON("https://luismgz.github.io/myjson.json", function(data) {
+      var j, k, len, record, ref, v;
+      $("#main").append("<table border=1><thead><tr>");
+      ref = data[0];
+      for (k in ref) {
+        v = ref[k];
+        $("#main").append(`<th>${k}</th>`);
+      }
+      $("#main").append("</tr></thead>");
+      $("#main").append("<tbody>");
+      for (j = 0, len = data.length; j < len; j++) {
+        record = data[j];
+        $("#main").append("<tr>");
+        for (k in record) {
+          v = record[k];
+          if (k[0] === letter) {
+            $("#main").append(`<td>${v}</td>`);
+          }
+        }
+        $("#main").append("</tr>");
+      }
+      return $("#main").append("</tbody></table>");
     });
+  });
     this.get('#/compose', function() {
       this.app.swap('');
       return this.$element().append('<h1>say hello to?</h1>' + '<form action="#/compose" method="post">' + '<input type="text" name="to" />' + '<input type="submit" name="submit" />' + '</form>');
