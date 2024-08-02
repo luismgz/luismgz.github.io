@@ -58,19 +58,19 @@ app = $.sammy('#main', function() {
       rows = [];
       for (j = 0, len = data.length; j < len; j++) {
         record = data[j];
-        rows.push("<tr>" + ((function() {
-          var results;
-          results = [];
-          for (k in record) {
-            v = record[k];
-            if (record.name[0] === letter) {
+        if (record.name[0] === letter) {
+          rows.push("<tr>" + ((function() {
+            var results;
+            results = [];
+            for (k in record) {
+              v = record[k];
               results.push(`<td>${v}</td>`);
             }
-          }
-          return results;
-        })()).join("") + "</tr>");
+            return results;
+          })()).join("") + "</tr>");
+        }
       }
-      return $("#main").append(`<table border=1>${header}<tbody>${rows.join("")}</tbody></table>`);
+      return $("#main").append(`<table>${header}<tbody>${rows.join("")}</tbody></table>`);
     });
   });
   this.get('#/compose', function() {

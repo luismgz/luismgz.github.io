@@ -36,9 +36,10 @@ app = $.sammy '#main', ->
       header = "<thead><tr>" + ("<th>#{k.toUpperCase()}</th>" for k,v of data[0]).join("") + "</tr></thead>"      
       rows = []      
       for record in data
-        rows.push "<tr>" + ("<td>#{v}</td>" for k,v of record when record.name[0] is letter).join("") + "</tr>"
-      $("#main").append "<table border=1>#{header}<tbody>#{rows.join("")}</tbody></table>"
-
+        if record.name[0] is letter
+          rows.push "<tr>" + ("<td>#{v}</td>" for k,v of record).join("") + "</tr>"
+      $("#main").append "<table>#{header}<tbody>#{rows.join("")}</tbody></table>"
+      
 
   @get '#/compose', ->
     @app.swap ''
