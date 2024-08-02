@@ -30,7 +30,21 @@ app = $.sammy '#main', ->
 
   @get '#/label/:name', ->
     @swap ''
-    @$element().append "<h1>#{@params['name']}</h1>"
+    #@$element().append "<h1>#{@params['name']}</h1>"
+    letter = @params['name'][0]
+    $.getJSON "https://luismgz.github.io/myjson.json", (data)->
+      $("#main").append "<table border=1><thead><tr>"
+      for k,v of data[0]
+        $("#main").append "<th>#{k}</th>"
+      $("#main").append "</tr></thead>"
+      $("#main").append "<tbody>"
+      for record in data
+        $("#main").append "<tr>"
+        for k,v of record
+          if k[0] is letter
+            $("#main").append "<td>#{v}</td>"
+        $("#main").append "</tr>"
+      $("#main").append "</tbody></table>"
 
   @get '#/compose', ->
     @app.swap ''
