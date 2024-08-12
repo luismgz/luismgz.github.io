@@ -11,12 +11,12 @@ $("document").ready(function(){
             { data: 'salary' }
         ],
         language: {
-        info: 'Mostrando pagina _PAGE_ de _PAGES_',
-        search:'Buscar',
-        lengthMenu: 'Desplegar _MENU_ por pagina',
-        infoFiltered: ' - filtrado de _MAX_ resultados',
-        infoEmpty: 'Nada que mostrar',
-        loadingRecords: "Cargando..."
+            info: 'Mostrando pagina _PAGE_ de _PAGES_',
+            search:'Buscar',
+            lengthMenu: 'Desplegar _MENU_ por pagina',
+            infoFiltered: ' - filtrado de _MAX_ resultados',
+            infoEmpty: 'Nada que mostrar',
+            loadingRecords: "Cargando..."
         }
     });
 
