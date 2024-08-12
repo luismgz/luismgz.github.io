@@ -19,6 +19,6 @@ $("document").ready(function(){
             loadingRecords: "Cargando..."
         }
     });
+    
 
 });
-
