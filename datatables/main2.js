@@ -1,7 +1,7 @@
 $("document").ready(function(){
 
     $('#example').DataTable({
-        ajax: 'https://luismgz.github.io/myjson.json',
+        ajax: 'https://luismgz.github.io/myjson2.json',
         columns: [
             { data: 'name' },
             { data: 'language' },
