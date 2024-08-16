@@ -81,8 +81,8 @@
         }
 
         .product-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 20px;
         }
 
@@ -145,13 +145,7 @@
             }
 
             .product-grid {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .product-card {
-                width: calc(50% - 10px);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .contact-info {
@@ -169,8 +163,8 @@
                 font-size: 2.5rem;
             }
 
-            .product-card {
-                width: calc(33.333% - 13.333px);
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -240,9 +234,5 @@
             <p>&copy; 2023 PrecisionCraft Tools. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Your JavaScript code can go here if needed
-    </script>
 </body>
 </html>
