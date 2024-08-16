@@ -21,9 +21,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            padding: 0 15px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         header {
@@ -34,7 +34,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -46,8 +46,8 @@
         }
 
         nav ul li {
-            margin-right: 20px;
-            margin-bottom: 10px;
+            margin-right: 15px;
+            margin-bottom: 5px;
         }
 
         nav ul li a {
@@ -62,40 +62,37 @@
         }
 
         main {
-            padding: 40px 0;
+            padding: 20px 0;
         }
 
         section {
             background-color: #fff;
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            padding: 20px;
-            margin-bottom: 40px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #3f51b5;
         }
 
         .product-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 20px;
-            justify-content: center;
         }
 
         .product-card {
             background-color: #fff;
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            width: calc(33.333% - 20px);
-            min-width: 250px;
         }
 
         .product-card:hover {
@@ -119,13 +116,13 @@
 
         .contact-info {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
             margin-top: 20px;
         }
 
         .contact-info div {
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
@@ -134,23 +131,46 @@
             margin-right: 10px;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            .product-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
 
             .product-card {
-                width: calc(50% - 20px);
+                width: calc(50% - 10px);
+            }
+
+            .contact-info {
+                flex-direction: row;
+                justify-content: space-around;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 960px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
             .product-card {
-                width: 100%;
+                width: calc(33.333% - 13.333px);
             }
         }
     </style>
